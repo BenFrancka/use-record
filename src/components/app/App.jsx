@@ -1,6 +1,15 @@
 import React from 'react';
+import { useRecord } from '../../hooks/useRecord';
 
 export default function App() {
+  const {
+    current,
+    undo,
+    redo,
+    record,
+  } = useRecord('#ff0000');
+
+  
   return (
     <>
       <button onClick={undo}>undo</button>

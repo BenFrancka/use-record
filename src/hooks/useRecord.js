@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 
-export const useRecord = (init) => {
-  const [current, setCurrent] = useState(init);
-  const [historyArray, setHistoryArray] = useState([init]);
+export const useRecord = (initialValue) => {
+  const [current, setCurrent] = useState(initialValue);
+  const [historyArray, setHistoryArray] = useState([initialValue]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -24,8 +24,10 @@ export const useRecord = (init) => {
   };
 
   const redo = () => {
-    setCurrent(historyArray + 1);
+    setCurrent(historyArray[currentIndex + 1]);
   };
+
+  console.log(historyArray);
 
   return {
     current,
