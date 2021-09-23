@@ -27,8 +27,6 @@ export const useRecord = (initialValue) => {
     setCurrent(historyArray[currentIndex + 1]);
   };
 
-  console.log(historyArray);
-
   return {
     current,
     currentIndex,
